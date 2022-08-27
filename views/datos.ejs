@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>datos</title>
+</head>
+
+<% if( fondo == "Verde"){ %>
+    <body style="background-color: #75ff9a;" >
+<% } %>
+
+<% if( fondo == "Gris"){ %>
+    <body style="background-color: #a3a3a3;" >
+<% } %>
+
+<% if( fondo == "Azul"){ %>
+    <body style="background-color: #7593ff;" >
+<% }else{  %>
+    <body>
+    <% } %>
+
+    <div style="width: 200px; margin: 200px auto;">
+        Hola  <b> <i> <%= datos_form.nombre %> </i> </b>
+        <br>
+        <br>
+        Elegiste el color: <b id="asd"><%= datos_form.fondo %> </b>
+        <br>
+        <br>
+        Tu Email es: <b> <%= datos_form.mail %> </b>
+        <br>
+        <br>
+        y tu edad es: <b> <%= datos_form.edad %> </b>
+        <br>
+        <br>
+        <a href="/saludo">Ir al saludo!</a>
+    </div>
+
+    
+</body>
+        
+</html>

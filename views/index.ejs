@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  
+<% if(fondo == "Gris"){ %>
+  <body style="background-color: #a3a3a3;" >
+<% }else{ %>
+  <body>
+<% } %>
+
+<% if(fondo == "Verde"){ %>
+    <body style="background-color: #75ff9a;" >
+<% }else{ %>
+    <body>
+<% } %>
+
+<% if(fondo == "Azul"){ %>
+    <body style="background-color: #7593ff;" >
+<% }else{ %>
+    <body>
+<% } %>
+
+    <h1 style="text-align: center;"><%= title %></h1>
+
+    <form style="display:flex; flex-direction: column; width: 500px; margin: auto;" action="/" method="post">
+      <label for="nombre">Ingrese su nombre</label>
+      <input type="text" name="nombre" id="" value="<%= locals.old && old.nombre %>">
+      <% if(locals.errors && errors.nombre){ %>
+          <p style="background-color: brown;color: #fff;padding: 5px;text-align: center;"><%= errors.nombre.msg %></p>
+      <% } %>
+
+      <br>
+
+      <label for="fondo">Elija un color de fondo</label>
+      <select name="fondo" id="">
+        <option value="" selected disabled > -- Elija un color -- </option>
+        <option value="Gris">Gris</option>
+        <option value="Verde">Verde</option>
+        <option value="Azul">Azul</option>
+        <% if(locals.errors && errors.fondo){ %>
+          <option selected value="<%= locals.old && old.fondo %>"><%= locals.old && old.fondo %></option>
+        <% } %>
+      </select>
+
+        <% if(locals.errors && errors.fondo){ %>
+          <p style="background-color: brown;color: #fff;padding: 5px;text-align: center;"><%= errors.fondo.msg %></p>
+        <% } %>
+        
+
+      <br>
+
+      <div>
+        <input type="checkbox" name="check_color" id="">Recordar color
+      </div>
+
+      <br>
+      <br>
+
+      <label for="mail">Ingrese su email</label>
+      <input type="text" name="mail" id="" value="<%= locals.old && old.mail %>">
+      <% if(locals.errors && errors.mail){ %>
+        <p style="background-color: brown;color: #fff;padding: 5px;text-align: center;"><%= errors.mail.msg %></p>
+      <% } %>
+
+      <br>
+
+      <label for="edad">Ingrese su edad</label>
+      <input type="tel" name="edad" id="" value="<%= locals.old && old.edad %>">
+      <% if(locals.errors && errors.edad){ %>
+        <p style="background-color: brown;color: #fff;padding: 5px;text-align: center;"><%= errors.edad.msg %></p>
+      <% } %>
+
+      <% if(fondo == "Gris"){ %>
+        <br>
+        <br>
+        <br>
+        <br>
+        <button type="submit">Borrar fondo <%= fondo %></button>
+      <% } %>
+      
+      <% if(fondo == "Verde"){ %>
+        <br>
+        <br>
+        <br>
+        <br>
+        <button type="submit">Borrar fondo <%= fondo %></button>
+      <% } %>
+
+      <% if(fondo == "Azul"){ %>
+        <br>
+        <br>
+        <br>
+        <br>
+        <button type="submit">Borrar fondo <%= fondo %></button>
+      <% } %>
+      <br>
+      <br>
+
+      <button type="submit">ENVIAR</button>
+
+    </form>
+  <script>
+    let borrar = document.querySelector("#borrar_fondo")
+    borrar.addEventListener('click',()=>{
+    })
+  </script>
+  </body>
+</html>

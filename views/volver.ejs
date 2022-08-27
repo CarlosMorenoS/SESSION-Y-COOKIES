@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volver</title>
+</head>
+<% if(fondo == "Verde"){ %>
+    <body style="background-color: #75ff9a;" >
+<% } %>
+
+<% if(fondo == "Gris"){ %>
+    <body style="background-color: #a3a3a3;" >
+<% } %>
+
+<% if(fondo == "Azul"){ %>
+    <body style="background-color: #7593ff;" >
+<% } %>
+
+    <div style="width: 200px; margin: 200px auto;">
+        <%= nombre %> Gracias por visitarnos!
+        Puedes volver con estos links
+        <br>
+        <br>
+        <a href="/saludo">Volver al saludo</a>
+        <br>
+        <br>
+        <a href="/">Formulario</a>
+    </div>
+
+</body>
+</html>
